@@ -3,7 +3,7 @@ return {
   {
     "rose-pine/neovim",
     name = "rose-pine",
-    lazy = false,
+    lazy = true,
     priority = 1000,
     config = function()
       require("rose-pine").setup {
@@ -15,31 +15,26 @@ return {
         disable_float_background = false,
         disable_italics = false,
       }
-
-      -- Set rose-pine as the colorscheme
-      -- vim.cmd.colorscheme "rose-pine"
-
       -- Override background to pure black
-      vim.api.nvim_set_hl(0, "Normal",       { bg = "#000000" })
-      vim.api.nvim_set_hl(0, "NormalNC",     { bg = "#000000" })
-      vim.api.nvim_set_hl(0, "SignColumn",   { bg = "#000000" })
-      vim.api.nvim_set_hl(0, "LineNr",       { bg = "#000000" })
-      vim.api.nvim_set_hl(0, "EndOfBuffer",  { bg = "#000000" })
-      vim.api.nvim_set_hl(0, "NormalFloat",  { bg = "#000000" })
-
+      -- vim.api.nvim_set_hl(0, "Normal",       { bg = "#000000" })
+      -- vim.api.nvim_set_hl(0, "NormalNC",     { bg = "#000000" })
+      -- vim.api.nvim_set_hl(0, "SignColumn",   { bg = "#000000" })
+      -- vim.api.nvim_set_hl(0, "LineNr",       { bg = "#000000" })
+      -- vim.api.nvim_set_hl(0, "EndOfBuffer",  { bg = "#000000" })
+      -- vim.api.nvim_set_hl(0, "NormalFloat",  { bg = "#000000" })
       vim.o.termguicolors = true
+      vim.cmd.colorscheme("rose-pine") -- apply Nordic 
     end,
   },
 
-  -- Catppuccin (installed but not applied by default)
 {
   "catppuccin/nvim",
   name = "catppuccin",
-  lazy = false,
+  lazy = true,
   priority = 1000,
   config = function()
     require("catppuccin").setup({
-      flavour = "macchiato", -- latte, frappe, macchiato, mocha
+      -- flavour = "macchiato", -- latte, frappe, macchiato, mocha
       transparent_background = false,
       term_colors = true,
       integrations = {
@@ -52,42 +47,26 @@ return {
         mini = false,
       },
     })
-    vim.cmd.colorscheme("catppuccin") -- apply catppuccin
+    vim.cmd.colorscheme("catppuccin") -- apply Nordic 
   end,
 },
 
-  -- Kanagawa
-  {
-    "rebelot/kanagawa.nvim",
-    name = "kanagawa",
-    lazy = false,
-    priority = 998,
+{
+    'AlexvZyl/nordic.nvim',
+    lazy = true,
+    priority = 1000,
     config = function()
-      require("kanagawa").setup {
-        compile = false,
-        undercurl = true,
-        commentStyle = { italic = true },
-        functionStyle = {},
-        keywordStyle = { italic = true },
-        statementStyle = { bold = true },
-        typeStyle = {},
-        transparent = false,
-        dimInactive = false,
-        terminalColors = true,
-        colors = {
-          palette = {},
-          theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
-        },
-        overrides = function(colors)
-          return {}
-        end,
-        theme = "wave", -- Load "wave" theme
-        background = {
-          dark = "wave",
-          light = "lotus",
-        },
-      }
-    end,
-  },
+    vim.cmd.colorscheme("nordic") -- apply Nordic 
+    end
+},
+
+{
+  "vague2k/vague.nvim",
+  lazy = false, -- make sure we load this during startup if it is your main colorscheme
+  priority = 1000, -- make sure to load this before all the other plugins
+  config = function()
+    vim.cmd("colorscheme vague")
+  end
+},
 }
 
