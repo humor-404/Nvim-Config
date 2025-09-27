@@ -27,3 +27,8 @@ require "lazy_setup"
 
 vim.o.swapfile = false
 vim.o.mouse = "a"
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*.json",
+  command = "%!jq ."
+})
