@@ -1,33 +1,12 @@
 return {
-    {
-        "rebelot/kanagawa.nvim",
-        lazy = false,
-        priority = 1000,
-        config = function()
-            require("kanagawa").setup({
-                compile = true,
-                undercurl = true,
-                commentStyle = { italic = true },
-                keywordStyle = { italic = true },
-                statementStyle = { bold = false },
-                transparent = false,
-                dimInactive = false,
-                globalStatus = true,
-            })
-
-            vim.cmd('colorscheme kanagawa-dragon')
-
-            -- Force black background
-            vim.cmd([[
-                hi Normal guibg=#000000
-                hi NormalFloat guibg=#0A0A0A
-                hi SignColumn guibg=#000000
-                hi LineNr guibg=#000000
-                hi CursorLine guibg=#111111
-                hi EndOfBuffer guibg=#000000
-                hi FoldColumn guibg=#000000
-                hi ColorColumn guibg=#0A0A0A
-            ]])
-        end,
-    },
+  {
+    "vague-theme/vague.nvim",
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other plugins
+    config = function()
+      -- NOTE: you do not need to call setup if you don't want to.
+      require("vague").setup({})
+      vim.cmd("colorscheme vague")
+    end,
+  },
 }

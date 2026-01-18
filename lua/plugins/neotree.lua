@@ -28,7 +28,7 @@ return {
         },
 
         window = {
-          -- position = "right", -- sidebar on the right
+          position = "right", -- sidebar on the right
           width = 25,
         },
       })
