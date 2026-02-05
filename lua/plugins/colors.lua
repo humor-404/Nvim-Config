@@ -7,6 +7,9 @@ return {
       -- NOTE: you do not need to call setup if you don't want to.
       require("vague").setup({})
       vim.cmd("colorscheme vague")
+      vim.api.nvim_set_hl(0, "Normal", { bg = "#000000" })
+      vim.api.nvim_set_hl(0, "NormalNC", { bg = "#000000" })
+      vim.api.nvim_set_hl(0, "EndOfBuffer", { bg = "#000000" })
     end,
   },
 }

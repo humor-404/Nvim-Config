@@ -7,3 +7,4 @@ vim.opt.shiftwidth = 4 -- spaces for indentation
 vim.opt.softtabstop = 4 -- TAB in insert mode = 4 spaces
 vim.opt.expandtab = true -- convert TABs to spaces
 vim.g.autoformat = false
+

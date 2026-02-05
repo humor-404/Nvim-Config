@@ -11,4 +11,10 @@ return {
       format_on_save = nil,
     },
   },
+    {
+  "kylechui/nvim-surround",
+  version = "*",
+  event = "VeryLazy",
+  config = true,
+}
 }
