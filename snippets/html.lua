@@ -4,7 +4,7 @@ local t = ls.text_node
 local i = ls.insert_node
 
 ls.add_snippets("html", {
-  s("!", {
+  s("html5", {
     t({
       "<!DOCTYPE html>",
       "<html lang=\"en\">",
