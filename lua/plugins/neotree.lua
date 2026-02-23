@@ -19,17 +19,20 @@ return {
 
         filesystem = {
           filtered_items = {
-            visible = false,
+            visible = true, -- show filtered items
+            hide_dotfiles = false, -- show .files
+            hide_gitignored = false, -- show gitignored files
+            hide_hidden = false, -- show hidden system files
           },
           follow_current_file = {
-            enabled = true, -- new syntax
+            enabled = true,
           },
           hijack_netrw_behavior = "open_default",
         },
 
         window = {
-          -- position = "right", -- sidebar on the right
-          width = 25,
+          position = "right", -- sidebar on the right
+          width = 30,
         },
       })
     end,
